@@ -1,0 +1,162 @@
+.login-page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-left{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+
+}
+
+.login-container{
+    width:100%;
+    max-width:400px;
+    
+}
+
+.login-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-group{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    
+}
+
+.logo-box{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    display:flex;
+    background-color: rgba(99,102,241,0.1);
+    justify-content:center;
+    align-items:center;
+    transition: background-color 2.3s ease;
+}
+
+.logo-box:hover{
+    background-color: rgba(99,102,241,0.2);
+}
+
+.logo-icon{
+    width:30px;
+    height:30px;
+    color: #6366f1;
+    font-size:28px;
+}
+login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-control label {
+  font-weight: 600;
+}
+
+.input-wrapper {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: gray;
+}
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #6366f1;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+  color: gray;
+}
+
+.login-btn {
+    margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #4f46e5;
+}
+
+.loader{
+    width:20px;
+    height:20px;
+    animation:spin 1s linear infinite;
+}
+
+.login-footer{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-footer p {
+  color: gray;
+}
+
+.login-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+}
