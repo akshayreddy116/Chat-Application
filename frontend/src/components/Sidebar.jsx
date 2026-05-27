@@ -1,6 +1,17 @@
-import React from 'react'
+import {useChartStore} from '../stores/ChartStore'
+
 
 const Sidebar = () => {
+  const{getUsers, users, selectedUser, setSelectedUser, isUsersLoading} = useChartStore()
+
+  const onlineUsers = [];
+  useEffect(() => {
+    getUsers();
+  }, [getUsers]);
+
+  if(isUsersLoading) {
+    return <SidebarSkeleton />
+  }
   return (
     <div>
       
@@ -9,3 +20,7 @@ const Sidebar = () => {
 }
 
 export default Sidebar
+
+
+
+
