@@ -1,9 +1,30 @@
-import React from 'react'
+import {useChatStore} from '../store/useChatStore'
+import useEffect from 'react'
+import ChatHeader from './ChatHeader'
+import MessageInput from './MessageInput'
+
 
 const ChatContainer = () => {
+
+  const {messages, getMessages, selectedUser, isMessageLoading} = useChatStore()  
+  
+  useEffect(() => {
+    getMessages(selectedUser._id)
+  },[selectedUser._id, getMessages])
+
+  if(isMessageLoading) return(
+    <div className="flex-1 flex flex-col overflow-auto">
+      <ChatHeader />
+      <MessageSkeleton />
+      <MessageInput />
+    </div>
+  )
+
   return (
-    <div>
-      ch
+    <div className="flex-1 flex flex-col overflow-auto"> 
+    <ChatHeader />
+    <p>message</p>
+    <MessageInput />
     </div>
   )
 }
