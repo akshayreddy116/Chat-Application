@@ -1,7 +1,13 @@
 import React from 'react'
 import {Image} from 'lucide-react';
 const MessageInput = () => {
-    const [imagePreview, setImagePreview] = useState(null);
+
+  const [imagePreview, setImagePreview] = useState(null);
+  const fileInputRef = useRef(null);
+  const removeImage = () => {
+    setImagePreview(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
   return (
 
     <div className="p-4 w-full">
